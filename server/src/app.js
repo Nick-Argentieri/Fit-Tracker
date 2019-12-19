@@ -10,6 +10,11 @@ app.use(bodyParser.json())
 app.use(cors())
 
 
+app.post('/register', (req, res) => {
+    res.send({
+        message: `Hello ${req.body.email}, User Registered Successfully!`
+    })
+});
 
 app.get('/status' , (req, res) => {
     res.send({
