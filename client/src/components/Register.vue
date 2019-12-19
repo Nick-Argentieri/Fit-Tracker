@@ -16,10 +16,16 @@
             ></v-text-field>
             <br>
             <v-text-field
-              label="Password"
               v-model="password"
               class="styled-input"
-            ></v-text-field>
+              :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
+              :rules="[rules.required, rules.min]"
+              :type="show1 ? 'text' : 'password'"
+              name="input-10-1"
+              label="Password"
+              hint="At least 8 characters, letters and numbers only."
+            @click:append="show1 = !show1"
+          ></v-text-field>
           </form>
           <br>
           <div class="error" v-html="error" />
@@ -42,7 +48,12 @@ export default {
     return {
       email: '',
       password: '',
-      error: null
+      error: null,
+      show1: false,
+      rules: {
+        required: value => !!value || 'Required',
+        min: v => v.length >= 8 || 'Must be at least 8 characters'
+      }
     }
   },
   methods: {
@@ -62,7 +73,7 @@ export default {
 
 <style scoped>
 .error {
-  color: darkred;
+  color: rgb(156, 10, 10);
 }
 .styled-input{
   padding-left: 20px;

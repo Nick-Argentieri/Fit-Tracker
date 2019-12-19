@@ -1,12 +1,20 @@
 <template>
   <div id="app">
-    <router-view/>
+    <v-app>
+      <v-container fluid>
+      </v-container>
+    </v-app>
+   <router-view/>
   </div>
 </template>
 
 <script>
+import PageHeader from '@/components/Header.vue'
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    PageHeader
+  }
 }
 </script>
 
@@ -21,5 +29,13 @@ export default {
 }
 .input-group-text-field input {
   border-bottom: 1px solid black;
+}
+.toolbar__title{
+  color: #FFFFFF;
+  font-weight: 300;
+}
+.v-btn__content{
+  color: #FFFFFF;
+  font-weight: 300;
 }
 </style>
