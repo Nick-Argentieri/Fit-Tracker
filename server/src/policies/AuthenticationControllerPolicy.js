@@ -23,7 +23,7 @@ module.exports = {
                     error: `The password provided failed to match the following rules: 
                     <br>
                     1. It must contain ONLY: lower case, upper case and numerical values
-                    <br:
+                    <br>
                     2. It must be at least 8 characters, and no greater than 32 characters
                     `
                 })
