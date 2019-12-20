@@ -1,9 +1,10 @@
 <template>
+<div class="Registration">
 <v-app>
-  <v-layout column>
+  <v-layout column height=100px>
     <v-flex offset-xs3>
       <v-flex xs8>
-      <v-card :elevation="2" height="300" width = "600">
+      <v-card :elevation="2" height="600" width = "600">
         <v-toolbar flat dense dark>
           <v-toolbar-title>Register</v-toolbar-title>
         </v-toolbar>
@@ -41,6 +42,7 @@
     </v-flex>
   </v-layout>
 </v-app>
+</div>
 </template>
 
 <script>
@@ -83,5 +85,9 @@ export default {
 }
 .input-group--text-field{
     margin-left: 10px;
+}
+.Registration{
+  margin-top: -75px;
+  margin-bottom: -100px;
 }
 </style>
