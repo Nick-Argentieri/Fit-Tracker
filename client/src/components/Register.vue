@@ -1,6 +1,7 @@
 <template>
   <v-layout column>
-    <v-flex>
+    <v-flex offset-xs3>
+      <v-flex xs8>
       <v-card :elevation="2" height="300" width = "600">
         <v-toolbar flat dense dark>
           <v-toolbar-title>Register</v-toolbar-title>
@@ -9,9 +10,9 @@
             name="fit-tracker-form"
             autocomplete="off">
             <v-text-field
+              label="Email"
               v-model="email"
               class="styled-input"
-              label="Email"
             ></v-text-field>
             <br>
             <v-text-field
@@ -35,6 +36,7 @@
             Register
           </v-btn>
       </v-card>
+      </v-flex>
     </v-flex>
   </v-layout>
 </template>
@@ -76,10 +78,5 @@ export default {
 .styled-input{
   padding-left: 20px;
   padding-right: 20px;
-}
-.v-card{
-  margin: 0 auto;
-  height: 300px;
-  width : 600px;
 }
 </style>

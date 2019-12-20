@@ -1,6 +1,9 @@
 <template>
   <div id="app">
-   <page-header/>
+    <v-app>
+      <v-container fluid>
+      </v-container>
+    </v-app>
    <router-view/>
   </div>
 </template>
