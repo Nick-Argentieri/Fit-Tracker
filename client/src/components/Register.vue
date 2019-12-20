@@ -20,13 +20,9 @@
             <v-text-field
               v-model="password"
               class="styled-input"
-              :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
-              :rules="[rules.required, rules.min]"
-              :type="show1 ? 'text' : 'password'"
-              name="input-10-1"
+              type="password"
               label="Password"
               hint="At least 8 characters, letters and numbers only."
-            @click:append="show1 = !show1"
           ></v-text-field>
           </form>
           <br>
@@ -63,10 +59,12 @@ export default {
   methods: {
     async register () {
       try {
-        await AuthenticationService.register({
+        const response = await AuthenticationService.login({
           email: this.email,
           password: this.password
         })
+        this.$store.dispatch('setToken', response.data.token)
+        this.$store.dispatch('setUser', response.data.user)
       } catch (error) {
         this.error = error.response.data.error
       }
