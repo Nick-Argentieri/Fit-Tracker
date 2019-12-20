@@ -1,4 +1,5 @@
 <template>
+<v-app>
   <v-layout column>
     <v-flex offset-xs3>
       <v-flex xs8>
@@ -39,6 +40,7 @@
       </v-flex>
     </v-flex>
   </v-layout>
+</v-app>
 </template>
 
 <script>
@@ -77,6 +79,9 @@ export default {
 }
 .styled-input{
   padding-left: 20px;
-  padding-right: 20px;
+  padding-right: 30px;
+}
+.input-group--text-field{
+    margin-left: 10px;
 }
 </style>

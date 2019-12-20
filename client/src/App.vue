@@ -1,19 +1,13 @@
 <template>
   <div id="app">
-    <v-app>
-      <v-container fluid>
-      </v-container>
-    </v-app>
    <router-view/>
   </div>
 </template>
 
 <script>
-import PageHeader from '@/components/Header.vue'
 export default {
   name: 'App',
   components: {
-    PageHeader
   }
 }
 </script>
