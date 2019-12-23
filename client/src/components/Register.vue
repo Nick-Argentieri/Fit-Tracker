@@ -1,48 +1,40 @@
 <template>
 <div class="Registration">
 <v-app>
-  <v-layout column height=100px>
-    <v-flex offset-xs3>
-      <v-flex xs8>
-      <v-card :elevation="2" height="600" width = "600">
-        <v-toolbar flat dense dark>
-          <v-toolbar-title>Register</v-toolbar-title>
-        </v-toolbar>
-          <form
-            name="fit-tracker-form"
-            autocomplete="off">
-            <v-text-field
-              label="Email"
-              v-model="email"
-              class="styled-input"
-            ></v-text-field>
-            <br>
-            <v-text-field
-              v-model="password"
-              class="styled-input"
-              type="password"
-              label="Password"
-              hint="At least 8 characters, letters and numbers only."
-          ></v-text-field>
-          </form>
-          <br>
-          <div class="error" v-html="error" />
-          <br>
+  <panel title="Register">
+    <form
+      name="fit-tracker-form"
+      autocomplete="off">
+        <v-text-field
+        label="Email"
+        v-model="email"
+        class="styled-input"
+        ></v-text-field>
+        <br>
+        <v-text-field
+         v-model="password"
+         class="styled-input"
+         type="password"
+         label="Password"
+         hint="At least 8 characters, letters and numbers only."
+         ></v-text-field>
+         </form>
+        <br>
+        <div class="error" v-html="error" />
+         <br>
           <v-btn
-            dark
-            @click="register">
-            Register
+          dark
+          @click="register">
+          Register
           </v-btn>
-      </v-card>
-      </v-flex>
-    </v-flex>
-  </v-layout>
-</v-app>
-</div>
+    </panel>
+   </v-app>
+  </div>
 </template>
 
 <script>
 import AuthenticationService from '@/services/AuthenticationService'
+import Panel from '@/components/Panel'
 export default {
   data () {
     return {
@@ -69,6 +61,9 @@ export default {
         this.error = error.response.data.error
       }
     }
+  },
+  components: {
+    Panel
   }
 }
 </script>

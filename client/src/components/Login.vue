@@ -1,13 +1,6 @@
 <template>
-<div class="Registration">
 <v-app>
-  <v-layout column height=100px>
-    <v-flex offset-xs3>
-      <v-flex xs8>
-      <v-card :elevation="2" height="600" width = "600">
-        <v-toolbar flat dense dark>
-          <v-toolbar-title>Login</v-toolbar-title>
-        </v-toolbar>
+  <panel title="Log in">
           <form
             name="fit-tracker-form">
             <v-text-field
@@ -32,15 +25,12 @@
             @click="login">
             Login
           </v-btn>
-      </v-card>
-      </v-flex>
-    </v-flex>
-  </v-layout>
+      </panel>
 </v-app>
-</div>
 </template>
 <script>
 import AuthenticationService from '@/services/AuthenticationService'
+import Panel from '@/components/Panel'
 export default {
   data () {
     return {
@@ -62,6 +52,9 @@ export default {
         this.error = error.response.data.error
       }
     }
+  },
+  components: {
+    Panel
   }
 }
 </script>
