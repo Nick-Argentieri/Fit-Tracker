@@ -4,6 +4,7 @@ import HomePage from '@/components/HomePage'
 import HelloWorld from '@/components/HelloWorld'
 import Register from '@/components/Register'
 import Login from '@/components/Login'
+import CreatePost from '@/components/CreatePost'
 
 Vue.use(Router)
 
@@ -25,9 +26,14 @@ export default new Router({
       component: Login
     },
     {
-      path: '/home-page',
-      name: 'home-page',
+      path: '/posts',
+      name: 'posts',
       component: HomePage
+    },
+    {
+      path: '/posts/create',
+      name: 'posts-create',
+      component: CreatePost
     }
   ]
 })

@@ -1,15 +1,34 @@
 <template>
 <div class="home-page">
 <v-app>
-  <panel title="Home">
+  <panel title="Posts">
+        <v-btn
+        slot="action"
+        @click="navigateTo({name: 'posts-create'})"
+        fab
+        dark
+        class="accent-2"
+        small
+        absolute
+        right
+        middle
+        >
+          <v-icon>add</v-icon>
+        </v-btn>
     <form
       name="fit-tracker-form"
       autocomplete="off"
       v-for="post in posts"
-      :key="post.user">
-      {{post.user}}
-      {{post.exercise}}
-      {{post.timereps}}
+      :key="post.id">
+      <v-layout>
+        <v-flex>
+          <div class="contents">
+            {{post.user}} -
+            {{post.exercise}} -
+            {{post.timereps}}
+          </div>
+        </v-flex>
+      </v-layout>
     </form>
     </panel>
    </v-app>
@@ -17,7 +36,7 @@
 </template>
 
 <script>
-import PostServices from '@/services/PostServices'
+import PostServices from '@/services/PostsServices'
 import Panel from '@/components/Panel'
 export default {
   data () {
@@ -26,7 +45,12 @@ export default {
     }
   },
   async mounted () {
-    this.posts = await PostServices.index()
+    this.posts = (await PostServices.index()).data
+  },
+  methods: {
+    navigateTo (route) {
+      this.$router.push(route)
+    }
   },
   components: {
     Panel
@@ -35,4 +59,7 @@ export default {
 </script>
 
 <style scoped>
+.contents{
+  font-size: 20px
+}
 </style>

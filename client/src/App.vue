@@ -42,4 +42,7 @@ export default {
   justify: center;
   margin-left: 5%;
 }
+.danger-alert{
+  color: red;
+}
 </style>

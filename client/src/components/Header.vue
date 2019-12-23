@@ -10,8 +10,8 @@
           </span>
           <v-btn
           flat
-          @click="navigateTo({name: 'home-page'})">
-          Home
+          @click="navigateTo({name: 'posts'})">
+          Posts
           </v-btn>
         </v-toolbar-title>
         <v-spacer></v-spacer>
